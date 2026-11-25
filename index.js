@@ -12,10 +12,15 @@ async function startBot() {
 
   sock.ev.on('creds.update', saveCreds);
 
+  
+    
+
   if (!sock.authState.creds.registered) {
-    const code = await sock.requestPairingCode(PHONE_NUMBER);
-    console.log('PAIRING CODE YAKO NI: ' + code);
-    console.log('Nenda WhatsApp > Linked Devices > Link a Device > Link with phone number');
+console.log("Nasubiri sekunde 5...");
+setTimeout(async () => {
+const code = await sock.requestPairingCode(PHONE_NUMBER);
+console.log("PAIRING CODE YAKO: " + code);
+}, 5000);
   }
 
   sock.ev.on('connection.update', (update) => {
